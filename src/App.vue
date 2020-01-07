@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <base-checkbox v-model="lovingVue"></base-checkbox>
+    <base-input v-model="inputdemo"></base-input>
+    {{inputdemo}}
     <h3>具有数据校验功能的表单组件——Form</h3>
     <i-form ref="form" :model="formValidate" :rules="ruleValidate">
       <i-form-item label="用户名" prop="name">
@@ -19,11 +22,15 @@
 import iForm from './components/form/form.vue';
 import iFormItem from './components/form/form-item.vue';
 import iInput from './components/input/input.vue';
+import baseCheckbox from './components/baseCheckbox';
+import baseInput from './components/input/index';
 export default {
   name: 'app',
-  components: { iForm, iFormItem, iInput },
+  components: { iForm, iFormItem, iInput, baseCheckbox, baseInput },
   data () {
     return {
+      lovingVue: true,
+      inputdemo: 'aaa',
       formValidate: {
         name: 'gfdgd',
         mail: ''

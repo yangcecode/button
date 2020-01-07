@@ -35,8 +35,6 @@ export default {
             this.dispatch('iForm', 'on-form-item-add', this);
             // 设置初始值，以便在重置时恢复默认值
             this.initialValue = this.fieldValue;
-            console.log(this.fieldValue);
-
             this.setRules();
         }
     },

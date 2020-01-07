@@ -7,6 +7,7 @@
 <script>
 export default {
     name: 'iForm',
+    // 把最上级的实例传递下去
     provide() {
         return {
             form : this
@@ -17,6 +18,14 @@ export default {
             fields: []
         }
     },
+    props: {
+        model: {
+            type: Object
+        },
+        rules: {
+            type: Object
+        }
+    },
     methods: {
         // 公开方法：全部重置数据
         resetFields() {
@@ -24,6 +33,7 @@ export default {
                 field.resetField();
             });
         },
+        // 验证方法
         validate(callback) {
             return new Promise(resolve => {
                 let valid = true;
@@ -54,14 +64,6 @@ export default {
             if (field.prop) this.fields.splice(this.fields.indexOf(field), 1);
         });
     },
-    props: {
-        model: {
-            type: Object
-        },
-        rules: {
-            type: Object
-        }
-    }
 }
 </script>
 
