@@ -1,6 +1,9 @@
 <template>
     <input 
-        type="text" 
+        type="text"
+        :value="currentValue"
+         @input="handleInput"
+         @blur="handleBlur"
         />
 </template>
 
